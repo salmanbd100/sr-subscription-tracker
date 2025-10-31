@@ -81,7 +81,9 @@ subscriptionSchema.pre('save', function (next) {
     };
 
     this.renewalDate = new Date(this.startDate);
-    this.renewalDate.setDate(this.renewalDate.getDate() + renewalIntervals[this.frequency]);
+    this.renewalDate.setDate(
+      this.renewalDate.getDate() + renewalIntervals[this.frequency]
+    );
   }
 
   // Auto update status based on renewalDate

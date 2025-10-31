@@ -28,6 +28,7 @@ pnpm format
 ## Architecture
 
 ### API Structure
+
 - RESTful API with versioned endpoints (`/api/v1/`)
 - Three main route modules mounted in `app.js`:
   - `/api/v1/auth` - Authentication endpoints (sign-up, sign-in, sign-out)
@@ -35,6 +36,7 @@ pnpm format
   - `/api/v1/subscriptions` - Subscription management including renewals and cancellations
 
 ### Project Structure
+
 ```
 routes/          # Express route handlers (currently stub implementations)
 config/          # Environment configuration
@@ -43,17 +45,20 @@ app.js           # Express app entry point and route mounting
 ```
 
 ### Database
+
 - Uses Mongoose ODM for MongoDB
 - Connection established on server startup in `app.js:21`
 - Database URI loaded from environment-specific files via `config/env.js`
 
 ### Environment Configuration
+
 - Environment variables loaded from `.env.{NODE_ENV}.local` files
 - Required variables: `PORT`, `NODE_ENV`, `DB_URI`
 - Defaults to `development` if `NODE_ENV` not set
 - Application will exit if `DB_URI` is not defined
 
 ### Current Implementation Status
+
 The API skeleton is in place with route definitions, but route handlers are currently stubs returning placeholder JSON responses. Models, controllers, and middleware directories do not exist yet.
 
 ## Key Technical Details
